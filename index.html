@@ -12,21 +12,32 @@
         </header>
         <p>These are items that we'd like for the household and for ourselves! 
         Feel free to peruse.</p>
-        <form id='google-form' method='POST' target='echoMe' 
-              action='https://script.google.com/macros/s/AKfycbw5PoxOXsJjtNdRAsvowGIAjCMMpG0b0CL-YuhdgZBENarvGuk-61HClR0p2rzpDW5o/exec'>
-            <div>Name:</div>
-            <input type='text' name='item'>
-            <div>Email:</div>
-            <input type='text' name='description'>
+        <iframe name='echoMe'></iframe>
+        <form id='submissionForm'>
+            <label for='item'>Item:</label>
+            <input type='text' id='item' name='item'><br>
+            <label for='description'>Description:</label>
+            <input type='text' id='description' name='description'><br>
+            <label for='recipient'>Recipient:</label>            
+            <select id='recipient' name='recipient'>
+                <option value='family'>The Estate</option>
+                <option value ='lady'>Mrs. Owen</option>
+                <option value ='lad'>Mr. Owen</option>
+                <option value ='lass'>Ms. Owen</option>
+                <option value ='lassy'>K.9. Owen</option>
+            </select><br>
             <input type='submit' value='Submit'>
         </form>
-        <button type='button' onclick="grabData()">HIT ME</button>
         <h2>For the Estate</h2><!-- Gifts for the Fam -->
-        <div id='buildATable'></div>
+        <div id='family'></div>
         <h2>For Mrs. Owen</h2><!-- Gifts for Mary -->
+        <div id='lady'></div>
         <h2>For Mr. Owen</h2><!-- Gifts for Dakota -->
+        <div id='lad'></div>
         <h2>For Ms. Owen</h2><!-- Gifts for Jojo -->
+        <div id='lass'></div>
         <h2>For K.9. Owen</h2><!-- Gifts for the Puppy -->
+        <div id='lassy'></div>
         <script src='functions.js'></script>
     </body>
 </html>
