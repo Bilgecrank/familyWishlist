@@ -3,7 +3,7 @@
  * @author Bilgecrank
  */
 
-const scriptUrl = 'https://script.google.com/macros/s/AKfycby5fzI9r6I3DDKWvKyYJ-EOmoyu0WrOyuu15RpucxHYWBZ4gLKviWYSUfwP5xCZ5Hq3/exec';
+const scriptUrl = 'https://script.google.com/macros/s/AKfycbwYaX_7rgQlPFlWfkC9nFd3VsA6BziFrdmnjZEsuxnfghJ5BO2tDoW43-XoEZPbl_my/exec';
 
 grabData();
 
@@ -25,13 +25,18 @@ submissionForm.onsubmit =
          * Simulates form submission without causing a redirect.
          */
         e.preventDefault();
+        document.getElementById('submissionForm').style.display = 'none';
+        document.getElementById('loadingTrooper').style.display = 'block'; 
         let response = await fetch(scriptUrl, {
             method: 'POST',
             credentials: 'omit',
             body: new FormData(submissionForm)
         });
         alert(await response.json());
+        document.getElementById('loadingTrooper').style.display = 'none';         
         document.getElementById('submissionForm').reset();
+        document.getElementById('openSubFormButton').style.display = 'block';
+        grabData(); //Reload with new data. @todo set function to show loading data.
     };
 
 function buildTables(tableData) {
@@ -61,4 +66,7 @@ function buildTables(tableData) {
     }
 }
 
-
+function openSubmissionForm() {
+    document.getElementById('submissionForm').style.display = 'block';
+    document.getElementById('openSubFormButton').style.display = 'none';
+}

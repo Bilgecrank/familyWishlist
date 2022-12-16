@@ -12,22 +12,30 @@
         </header>
         <p>These are items that we'd like for the household and for ourselves! 
         Feel free to peruse.</p>
-        <iframe name='echoMe'></iframe>
-        <form id='submissionForm'>
-            <label for='item'>Item:</label>
-            <input type='text' id='item' name='item'><br>
-            <label for='description'>Description:</label>
-            <input type='text' id='description' name='description'><br>
-            <label for='recipient'>Recipient:</label>            
-            <select id='recipient' name='recipient'>
-                <option value='family'>The Estate</option>
-                <option value ='lady'>Mrs. Owen</option>
-                <option value ='lad'>Mr. Owen</option>
-                <option value ='lass'>Ms. Owen</option>
-                <option value ='lassy'>K.9. Owen</option>
-            </select><br>
-            <input type='submit' value='Submit'>
-        </form>
+        <div>
+            <img id='loadingTrooper' src='static/trooperidlebig.gif' alt='Trooper is loading.'
+                 style='height: 200px; width: 200px; display: none;'>
+            <button id ='openSubFormButton'
+                    onclick='openSubmissionForm()'>Submit an Item</button>
+            <form id='submissionForm' style='display:none;'>
+                <label for='item'>Item:</label>
+                <input type='text' id='item' name='item' required><br>
+                <label for='description'>Description:</label>
+                <input type='text' id='description' name='description' required><br>
+                <label for='recipient'>Recipient:</label>            
+                <select id='recipient' name='recipient' required>
+                    <option value='' disabled selected>Choose a person</option>
+                    <option value='family'>The Estate</option>
+                    <option value='lady'>Mrs. Owen</option>
+                    <option value='lad'>Mr. Owen</option>
+                    <option value='lass'>Ms. Owen</option>
+                    <option value='lassy'>K.9. Owen</option>
+                </select><br>
+                <label for='passwordSub'>Password:</label>
+                <input type='password' id='passwordSub' name='passwordSub' required>
+                <input type='submit' value='Submit'>
+            </form>
+        </div>
         <h2>For the Estate</h2><!-- Gifts for the Fam -->
         <div id='family'></div>
         <h2>For Mrs. Owen</h2><!-- Gifts for Mary -->
