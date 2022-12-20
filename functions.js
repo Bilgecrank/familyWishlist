@@ -48,17 +48,24 @@ function buildTables(tableData) {
 
     for (let table in tableData){
         let inputData = tableData[table];
-        let headers = Object.keys(inputData[0]);
+        let headers = [
+            'QTY',
+            'Item',
+            'Description',
+            'Link'
+        ];
         let rawHTML = '<table border="1">';
         rawHTML += '<tr>'; //Build headers.
-        for (i = 2; i < headers.length; i++) {
+        for (i = 0; i < headers.length; i++) {
             rawHTML += '<th>' + headers[i] + '</th>';
         }
-        rawHTML += '</tr>';//End headers, start data.
+        rawHTML += '</tr>'; //End headers, start data.
         for (let x in inputData){
             rawHTML += '<tr>';
-            rawHTML += '<td>' + inputData[x].item + '</td>';
-            rawHTML += '<td>' + inputData[x].description + '</td>';
+            rawHTML += '<td>' + inputData[x].quantity + '</td>';    //QTY
+            rawHTML += '<td>' + inputData[x].item + '</td>';        //Iten
+            rawHTML += '<td>' + inputData[x].description + '</td>'; //Description
+            rawHTML += '<td>' + inputData[x].item_link + '</td>';   //Link
             rawHTML += '</tr>';
         }
         rawHTML += '</table>';

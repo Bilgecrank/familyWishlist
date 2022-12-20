@@ -18,10 +18,14 @@
             <button id ='openSubFormButton'
                     onclick='openSubmissionForm()'>Submit an Item</button>
             <form id='submissionForm' style='display:none;'>
+                <label for='quantity'>Quantity:</label>
+                <input type='number' id='quantity' name='quantity' min='0' required><br>
                 <label for='item'>Item:</label>
                 <input type='text' id='item' name='item' required><br>
                 <label for='description'>Description:</label>
                 <input type='text' id='description' name='description' required><br>
+                <label for='item_link'>Item Link:</label>
+                <input type='url' id='item_link' name='item_link' placeholder='Optional'><br>
                 <label for='recipient'>Recipient:</label>            
                 <select id='recipient' name='recipient' required>
                     <option value='' disabled selected>Choose a person</option>
