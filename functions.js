@@ -3,7 +3,7 @@
  * @author Bilgecrank
  */
 
-const scriptUrl = 'https://script.google.com/macros/s/AKfycbwYaX_7rgQlPFlWfkC9nFd3VsA6BziFrdmnjZEsuxnfghJ5BO2tDoW43-XoEZPbl_my/exec';
+const scriptUrl = 'https://script.google.com/macros/s/AKfycbz1fiXhKFRGsnIu20nHKKHMocfx1Nar4f7QW7ro83nMMkQuttbEyidberYtaB87aCWp/exec';
 
 grabData();
 
